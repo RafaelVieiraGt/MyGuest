@@ -1,6 +1,8 @@
 .container {
     height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 .container .left{
     width: 50%;
@@ -8,6 +10,15 @@
     background-color: #01977E;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.container .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
     align-items: center;
 }
 .left .content {
@@ -40,4 +51,20 @@
     width: 60%;
     scale: 1.3;
     height: 450px;
+}
+.right h1{
+    font-family: 'Poppins';
+    color: #01977E;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+.bola-cima{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #01977E;
+    border-radius: 0 0 0 100%;
 }

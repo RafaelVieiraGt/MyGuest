@@ -1,4 +1,5 @@
 import figure from "../../Assets/figureLogin.png"
+import CardLogin from "../../Components/CardLogin";
 import './login.css'
 
 export default function Login() {
@@ -15,7 +16,9 @@ export default function Login() {
                 </div>
            </div>
            <div className="right">
-
+                <h1>Bem-vindo(a) de volta!</h1>
+                <CardLogin title="Login" register={false}/>
+                <div className="bola-cima"></div>
            </div>
         </div>
     );

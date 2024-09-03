@@ -1,6 +1,14 @@
 import "./cardLogin.css"
+import { useNavigate } from "react-router-dom";
 
 export default function CardLogin(props) {
+
+    const navigate = useNavigate()
+
+
+    function switchToReg() {
+        navigate("/register")
+    }
 
     return(
         <div className="box">
@@ -9,7 +17,7 @@ export default function CardLogin(props) {
                 <form>
                     {props.register ? (
                         <div className="inputarea">
-                           <input type="text"/>     
+                           <input type="text" placeholder="Nome"/>     
                         </div>
                     ) : <></>}
 
@@ -19,6 +27,15 @@ export default function CardLogin(props) {
 
                     <div className="inputarea">
                         <input type="password" placeholder="senha"/>     
+                    </div>
+
+                    <div className="btnarea" >
+                        <button type="submit" >
+                            Registre-se
+                        </button>
+                        <button onClick={switchToReg()}>
+                            Login
+                        </button>
                     </div>
                 </form>
             </div>

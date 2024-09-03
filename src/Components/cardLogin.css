@@ -1,7 +1,6 @@
 .box {
     width:60%;
     max-width: 400px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,6 +11,7 @@
     box-shadow:  8px 8px 16px #adadad,
                  -8px -8px 16px #ffffff;
     gap: 20px;
+    padding: 20px 0;
 }
 .box h2 {
     font-family: 'Poppins';
@@ -25,14 +25,41 @@
     gap: 10px;
 }
 .inputarea {
-    padding: 8px 12px;
+    padding: 12px 14px;
     border-radius: 16px;
     background-color: #dcdcdc;
 }
 .inputarea input{
     font-family: 'Poppins';
-    color: #fff;
+    color: #000;
     font-size: 16px;
     border: none;
     background: transparent;
+}
+.inputarea :focus {
+    border: none;
+    outline: none;
+}
+
+.btnarea {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.btnarea button {
+    border: 0;
+    padding: 6px 8px;
+    border-radius: 16px;
+    background-color: #01977E;
+    color: #ffffff;
+    transition: all 0.2;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Poppins";
+}
+.btnarea button:hover{
+    color: #01977E;
+    background-color: #ffffff;
+    border: 1px solid #01977E;
 }

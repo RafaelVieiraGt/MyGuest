@@ -1,3 +1,4 @@
+import { useState } from "react";
 import figure from "../../Assets/figureLogin.png"
 import CardLogin from "../../Components/CardLogin";
 import './register.css'

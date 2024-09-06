@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./cardLogin.css"
 import { useNavigate } from "react-router-dom";
 
@@ -5,9 +6,11 @@ export default function CardLogin(props) {
 
     const navigate = useNavigate()
 
-
-    function switchToReg() {
-        navigate("/register")
+    function switchPage() {
+        if (window.location.pathname === "/")
+            navigate("/register")
+        else 
+            navigate("/")     
     }
 
     return(
@@ -30,12 +33,27 @@ export default function CardLogin(props) {
                     </div>
 
                     <div className="btnarea" >
-                        <button type="submit" >
-                            Registre-se
-                        </button>
-                        <button onClick={switchToReg()}>
-                            Login
-                        </button>
+
+                        {props.register ? (
+                            <>
+                                <button type="submit">
+                                    Registre-se
+                                </button>
+                                <button type="button" onClick={() => switchPage()}>
+                                    Login
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <button type="submit">
+                                    Login
+                                </button>
+                                <button type="button" onClick={(e) => switchPage(e.target)}>
+                                    Register
+                                </button>
+                            </>
+                        )}
+ 
                     </div>
                 </form>
             </div>

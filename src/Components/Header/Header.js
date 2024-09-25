@@ -8,7 +8,7 @@ export default function Header(props) {
             <div className="logo" >
                 <div className="name" >
                     <img src={icon}/>
-                    <span>Rafael</span>
+                    <span>{props.name}</span>
                 </div>
                 <img src={logo} />
 

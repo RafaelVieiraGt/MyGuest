@@ -1,4 +1,3 @@
-
 .card-rows {
     width: 100%;
     justify-content: center;
@@ -7,6 +6,7 @@
     flex-direction: row;
     gap: 40px;
 }
+
 .buttons-filter {
     width: 300px;
     height: 200px;
@@ -18,7 +18,7 @@
     gap: 10px;
 }
 
-.buttons-filter button{
+.buttons-filter button {
     width: 100%;
     border-radius: 22px;
     font-family: "Poppins";
@@ -29,7 +29,7 @@
     transition: all 0.2s;
     color: #000;
     font-size: 18px;
-    box-shadow:  0 6px 4px -1px #bababa;
+    box-shadow: 0 6px 4px -1px #bababa;
 }
 
 .buttons-filter button:hover {
@@ -47,7 +47,7 @@
     align-items: center;
     border: 0;
     border-radius: 28px;
-    box-shadow:  0 6px 4px -1px #bababa;
+    box-shadow: 0 6px 4px -1px #bababa;
 }
 
 .inputarea-home {
@@ -55,15 +55,19 @@
     flex-direction: column;
     gap: 10px;
 }
-.inputarea-home input, .inputarea-home textarea {
+
+.inputarea-home input,
+.inputarea-home textarea {
     padding: 8px 12px;
     font-family: "Poppins";
 }
+
 .inputarea-home label {
     margin-left: 5px;
     font-family: "Poppins";
     font-size: 16px;
 }
+
 .input-radio {
     display: flex;
     flex-direction: row;
@@ -71,29 +75,45 @@
     justify-content: center;
     align-items: center;
 }
+
 .save-btn {
     font-family: "Poppins";
     font-size: 18px;
-    padding: 8px 14px;
+    padding: 8px 12px;
     border: 0;
     border-radius: 16px;
     background-color: #01977E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
 }
+
+.save-btn:hover {
+    background-color: #fff;
+    color: #01977E;
+    border: 1px solid #01977E;
+}
+
 .save-btn img {
-    margin-top: 10px;
     width: 20px;
     height: 20px;
+    margin-left: 10px;
 }
+
 .underline {
     height: 1px;
     border-radius: 18px;
     background-color: #bababa;
 }
+
 table {
     font-family: "Poppins";
     width: 90%;
 }
+
 table tbody tr td {
     text-align: center;
     font-size: 16px;

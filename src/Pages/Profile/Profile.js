@@ -57,7 +57,11 @@ export default function Profile() {
                 userAvatar: userAvatar
             }
         )
-        .then(() => toast.success("Perfil atualizado!"))
+        .then(() => {
+            toast.success("Perfil atualizado!")
+            localStorage.removeItem("@userName")
+            localStorage.setItem("@userName", userName)
+    })
         .catch((error) => console.log(error))
     }
 

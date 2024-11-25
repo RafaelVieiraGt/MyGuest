@@ -27,3 +27,6 @@
     font-size: 26px;
     font-weight: bold;
 }
+#imagem-invertida {
+    transform: rotate(180deg);
+}

@@ -74,6 +74,7 @@
 .inputarea-home textarea {
     padding: 8px 12px;
     font-family: "Poppins";
+    resize: none;
 }
 
 .inputarea-home label {

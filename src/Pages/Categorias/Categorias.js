@@ -43,7 +43,7 @@ export default function Categorias() {
         e.preventDefault()
 
         if (nomeCategoria === "" || descricaoCategoria === "") {
-            alert("Campos obrigatórios faltantes!")
+            toast.error("Todos os campos deve ser preenchidos!!")
             return
         }
 

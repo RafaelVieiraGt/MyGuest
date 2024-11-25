@@ -68,6 +68,10 @@ export default function Home() {
 
     async function handleSubmit(e) {
         e.preventDefault()
+        if (descricaoCarteira === "" || valorCarteira === "" || tipoCarteira === "") {
+          toast.error("Todos os campos deve ser preenchidos!")
+          return
+        }
 
         await api.post("carteira", {
             descricaoCarteira: descricaoCarteira,
@@ -139,9 +143,10 @@ export default function Home() {
                         <button className="btnfilter" onClick={(e) => clickFilter(30, e)}>Nos últimos 30 dias</button>
                         <button className="btnfilter" onClick={(e) => clickFilter(7, e)}>Nos últimos 7 dias</button>
                     </div>
-                    <CardHome title="Entradas" value={entradas}/>
-                    <CardHome title="Saidas" value={saidas}/>
-                    <CardHome title="Saldo" value={saldo}/>
+                    
+                    <CardHome title="Saidas" value={saidas} saida={true}/>
+                    <CardHome title="Entradas" value={entradas} saida={false}/>
+                    <CardHome title="Saldo" value={saldo} saida={true}/>
                 </div>
                 <div className="form-add-cat">
                     <div className="inputarea-home" >
@@ -158,7 +163,7 @@ export default function Home() {
                         <label>Categoria</label>
                         <select value={categoriaCarteira} onChange={(e) => setCategoriaCarteira(e.target.value)}>
                             {categorias.map((c) => (
-                                <option value={c.idCat}>{c.descricaoCat}</option>
+                                <option value={c.idCat}>{c.nomeCat}</option>
                             ))}
                         </select>
                     </div>
@@ -218,7 +223,7 @@ export default function Home() {
                                 >
                                   {categorias.map((categoria) => (
                                     <option key={categoria.nomeCat} value={categoria.nomeCat}>
-                                      {categoria.descricaoCat}
+                                      {categoria.nomeCat}
                                     </option>
                                   ))}
                                 </select>

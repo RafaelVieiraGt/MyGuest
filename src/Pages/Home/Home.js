@@ -50,6 +50,7 @@ export default function Home() {
             .catch((e) => {
                 toast.error(e.response.data.message)
             })
+
         }
 
         async function loadCategorias() {
@@ -64,6 +65,7 @@ export default function Home() {
 
         loadCarteiras();
         loadCategorias();
+        console.log(carteiras, categorias[0], editValues)
     }, [timeFilter])
 
     async function handleSubmit(e) {
@@ -108,7 +110,7 @@ export default function Home() {
           await api.put(`/carteira/${userId}/${id}`, {
             descricao: editedCarteira?.descricaoCarteira ?? "",
             valor: editedCarteira?.valor ?? 0,
-            categoria: editedCarteira?.categoria ?? "",
+            categoria: editedCarteira?.categoria ?? 0,
             tipo: editedCarteira?.tipoCarteira ?? ""
           });
           toast.success("Carteira Atualizada com Sucesso!");
@@ -218,11 +220,11 @@ export default function Home() {
                               </td>
                               <td>
                                 <select
-                                  value={editValues[c.idCarteira]?.categoria ?? c.categoria}
+                                  value={editValues[c.idCarteira]?.categoria ?? c.catCarteira}
                                   onChange={(e) => handleInputChange(c.idCarteira, 'categoria', e.target.value)}
                                 >
                                   {categorias.map((categoria) => (
-                                    <option key={categoria.nomeCat} value={categoria.nomeCat}>
+                                    <option key={categoria.idCat} value={categoria.idCat}>
                                       {categoria.nomeCat}
                                     </option>
                                   ))}
